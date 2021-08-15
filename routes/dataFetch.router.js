@@ -5,7 +5,6 @@ const {datamodel}=require("../models/data.model.js")
 router.route('/')
  .get(async (req, res) => {
    let { pageNumber,sort,state,city } = req.query;
-   console.log(sort,state,city)
     const number = Number(pageNumber);
     const size = 8;
     
@@ -59,7 +58,6 @@ router.route('/search/city/')
  .get(async (req, res) => {
    
       let { pageNumber,sort,value } = req.query;
-      console.log(sort)
       const number = Number(pageNumber);
       const size = 8;
       const regex =  new RegExp("^"+value.toUpperCase(),'g');
